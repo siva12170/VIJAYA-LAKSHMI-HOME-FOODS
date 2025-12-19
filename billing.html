@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VIJAYA LAKSHMI HOME FOODS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>VIJAYA LAKSHMI HOME FOODS</h1>
+
+<div class="container">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <button class="nav-btn active" data-target="billing">Billing</button>
+    <button class="nav-btn" data-target="orders">Orders</button>
+    <button class="nav-btn" data-target="daily">Daily Report</button>
+    <button class="nav-btn" data-target="monthly">Monthly Report</button>
+  </nav>
+
+  <div class="top">
+    <div>Bill No: <span id="billNo"></span></div>
+    <div>Date & Time: <span id="dateTime"></span></div>
+  </div>
+
+  <!-- ================= BILLING ================= -->
+  <section id="billing" class="page">
+
+    
+
+    <div class="split">
+
+      <!-- LEFT -->
+      <div class="left">
+        <div class="admin">
+          <input id="itemName" placeholder="Item name">
+          <select id="itemCategory">
+            <option value="sweet">Sweet</option>
+            <option value="hot">Hot</option>
+          </select>
+          <input id="priceKg" type="number" placeholder="₹ per Kg">
+          <input id="pricePiece" type="number" placeholder="₹ per Piece">
+          <button id="addItemBtn">Add Item</button>
+        </div>
+
+        <div class="products-split">
+          <div class="products-col">
+            <h4>Sweets</h4>
+            <div id="sweets" class="products"></div>
+          </div>
+          <div class="products-col">
+            <h4>Hot Items</h4>
+            <div id="hotItems" class="products"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="right">
+        <!-- MULTI CUSTOMER BAR (ONLY FOR BILLING) -->
+    <div class="customers-bar">
+      <button onclick="addCustomer()">+ Customer</button>
+      <div id="customerTabs" class="customer-tabs"></div>
+    </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Amount</th>
+              <th>X</th>
+            </tr>
+          </thead>
+          <tbody id="billBody"></tbody>
+        </table>
+        
+        <div class="total">
+          Total ₹ <span id="billTotal">0</span>
+        </div>
+        
+
+        <button class="new" id="finalizeBtn">Finalize Bill</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DAILY REPORT ================= -->
+  <section id="daily" class="page hidden">
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Grams</th>
+          <th>Pieces</th>
+        </tr>
+      </thead>
+      <tbody id="dailyBody"></tbody>
+    </table>
+  </section>
+
+  <!-- ================= MONTHLY REPORT ================= -->
+  <section id="monthly" class="page hidden">
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Grams</th>
+          <th>Pieces</th>
+        </tr>
+      </thead>
+      <tbody id="monthlyBody"></tbody>
+    </table>
+  </section>
+
+  <!-- ================= ORDERS ================= -->
+  <section id="orders" class="page hidden">
+    <h3>Orders</h3>
+
+    <div class="admin">
+      <input id="oName" placeholder="Customer Name">
+      <input id="oMobile" placeholder="Mobile">
+      <input id="oDate" type="date">
+      <input id="oTotal" type="number" placeholder="Total Amount">
+      <input id="oPaid" type="number" placeholder="Paid Amount">
+
+      <textarea id="oNotes"
+        rows="4"
+        placeholder="Items / Size / Shape / Notes (each on new line)">
+      </textarea>
+
+      <button onclick="addOrder()">Add Order</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Mobile</th>
+          <th>Date</th>
+          <th>Paid</th>
+          <th>Balance</th>
+          <th class="notes-col">Notes</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="orderBody"></tbody>
+    </table>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

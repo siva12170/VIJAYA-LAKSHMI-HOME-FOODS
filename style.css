@@ -1,0 +1,255 @@
+/* ================= BASE ================= */
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+  padding:10px;
+}
+
+.container{
+  background:#fff;
+  padding:12px;
+  border-radius:8px;
+}
+
+/* ================= LAYOUT ================= */
+.split{
+  display:flex;
+  gap:12px;
+}
+
+.left{
+  width:70%;
+  max-height:75vh;
+  overflow:auto;
+}
+
+.right{
+  width:30%;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.nav-btn{
+  padding:6px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.nav-btn.active{
+  background:#ffccbc;
+}
+
+.hidden{
+  display:none;
+}
+
+/* ================= PRODUCTS ================= */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,180px);
+  gap:10px;
+}
+
+.products-split{display:flex;gap:12px}
+.products-col{flex:1;min-width:0}
+.products-col .products{max-height:60vh;overflow:auto;padding-right:6px}
+.products-col h4{margin:8px 0}
+
+.item{
+  border:1px solid #ccc;
+  border-radius:6px;
+  padding:6px;
+  position:relative;
+  cursor:grab;
+  background:#fafafa;
+}
+
+.item:active{
+  cursor:grabbing;
+}
+
+.item-number{
+  position:absolute;
+  top:35%;
+  left:40%;
+  font-size:26px;
+  opacity:.25;
+  pointer-events:none;
+}
+
+.item img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+/* ================= DELETE BUTTON ================= */
+.delete-btn{
+  position:absolute;
+  top:4px;
+  right:4px;
+  background:#e53935;
+  color:white;
+  border:none;
+  border-radius:50%;
+  width:20px;
+  height:20px;
+  font-size:14px;
+  line-height:18px;
+  cursor:pointer;
+}
+
+/* ================= ITEM INPUT ROWS ================= */
+.card-row{
+  display:flex;
+  gap:4px;
+  margin-top:4px;
+}
+
+.card-row input{
+  width:60px;
+  padding:4px;
+}
+
+/* ================= BILL TABLE ================= */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td{
+  border:1px solid #ccc;
+  padding:6px;
+  text-align:center;
+  vertical-align:top;
+}
+
+.total{
+  text-align:right;
+  font-weight:bold;
+  margin:6px 0;
+}
+
+/* ================= FINALIZE BUTTON ================= */
+.new{
+  background:#ff9800;
+  color:white;
+  font-size:20px;
+  padding:14px;
+  width:100%;
+  margin-top:10px;
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+}
+
+.new:hover{
+  background:#fb8c00;
+}
+
+.new:active{
+  transform:scale(0.98);
+}
+
+/* ================= ORDER STATUS COLORS ================= */
+.status-pending{
+  background:#fff9c4;   /* yellow */
+}
+
+.status-done{
+  background:#c8e6c9;   /* green */
+}
+
+.status-cancelled{
+  background:#ffcdd2;   /* red */
+}
+
+/* ================= STATUS BUTTONS ================= */
+.status-btn{
+  padding:4px 8px;
+  font-size:12px;
+  border-radius:6px;
+  cursor:pointer;
+  border:none;
+  margin:2px;
+}
+
+.btn-pending{
+  background:#fbc02d;
+  color:black;
+}
+
+.btn-done{
+  background:#4caf50;
+  color:white;
+}
+
+.btn-cancel{
+  background:#e53935;
+  color:white;
+}
+
+/* ================= NOTES COLUMN ================= */
+.notes-col{
+  min-width:280px;
+  max-width:360px;
+  text-align:left;
+  white-space:pre-line;
+  padding:8px;
+  line-height:1.4;
+}
+
+/* ================= MULTI CUSTOMER ================= */
+.customers-bar{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:8px;
+}
+
+.customer-tabs{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.customer-tab{
+  padding:6px 10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  background:#f5f5f5;
+  cursor:pointer;
+}
+
+.customer-tab.active{
+  background:#ffccbc;
+  border-color:#ff9800;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .split{
+    flex-direction:column;
+  }
+  .left,.right{
+    width:100%;
+  }
+}
+
+.price-info{
+  font-size:12px;
+  color:#555;
+  margin-top:2px;
+}
+
+.price-calc input{
+  width:100%;
+  padding:4px;
+}
